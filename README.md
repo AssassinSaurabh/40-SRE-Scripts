@@ -13,14 +13,16 @@
 | 04 | [Top CPU Processes](./04-top-cpu-processes/) | Identifies top 5 CPU-consuming processes via `/proc/<pid>/stat` delta | Linux |
 | 05 | [Systemd Service Check](./05-systemd-service-check/) | Checks if a service is active; auto-starts it if not | Linux (systemd) |
 | 06 | [Log Error Counter](./06-log-error-counter/) | Counts ERROR lines in a log file, alerts if above threshold | All platforms |
+| 07 | [HTTP Health Check](./07-http-health-check/) | Checks if an HTTP endpoint is UP or DOWN with timeout handling | All platforms |
+| 08 | [Largest Files Finder](./08-largest-files-finder/) | Recursively finds top 5 largest files in a directory | Linux + macOS |
 
 ## How to Use
 
 Each folder is self-contained. Navigate into a folder and run the script:
 
 ```bash
-cd 06-log-error-counter
-python3 log_error_counter.py
+cd 07-http-health-check
+python3 http_health_check.py https://google.com
 ```
 
 ## Goal
@@ -34,7 +36,7 @@ python3 log_error_counter.py
 - System resource monitoring (CPU, Memory, Disk, Network)
 - Process management
 - Log file analysis and alerting
-- HTTP health checks
+- HTTP health checks and endpoint monitoring
 - DNS lookups
 - Alert thresholds and notifications
 - Kubernetes and container basics
