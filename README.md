@@ -15,14 +15,19 @@
 | 06 | [Log Error Counter](./06-log-error-counter/) | Counts ERROR lines in a log file, alerts if above threshold | All platforms |
 | 07 | [HTTP Health Check](./07-http-health-check/) | Checks if an HTTP endpoint is UP or DOWN with timeout handling | All platforms |
 | 08 | [Largest Files Finder](./08-largest-files-finder/) | Recursively finds top 5 largest files in a directory | Linux + macOS |
+| 09 | [TCP Port Checker](./09-tcp-port-checker/) | Tests if a TCP port is OPEN or CLOSED using raw sockets | All platforms |
+| 10 | [Stale Log Checker](./10-stale-log-checker/) | Warns if a log file has not been written to in > 5 minutes | Linux + macOS |
 
 ## How to Use
 
 Each folder is self-contained. Navigate into a folder and run the script:
 
 ```bash
-cd 07-http-health-check
-python3 http_health_check.py https://google.com
+cd 09-tcp-port-checker
+python3 tcp_port_checker.py google.com 443
+
+cd 10-stale-log-checker
+python3 stale_log_checker.py /var/log/myapp/app.log
 ```
 
 ## Goal
@@ -37,6 +42,7 @@ python3 http_health_check.py https://google.com
 - Process management
 - Log file analysis and alerting
 - HTTP health checks and endpoint monitoring
+- TCP/UDP port and connectivity checks
 - DNS lookups
 - Alert thresholds and notifications
 - Kubernetes and container basics
