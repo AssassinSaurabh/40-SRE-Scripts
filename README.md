@@ -17,23 +17,21 @@
 | 08 | [Largest Files Finder](./08-largest-files-finder/) | Recursively finds top 5 largest files in a directory | Linux + macOS |
 | 09 | [TCP Port Checker](./09-tcp-port-checker/) | Tests if a TCP port is OPEN or CLOSED using raw sockets | All platforms |
 | 10 | [Stale Log Checker](./10-stale-log-checker/) | Warns if a log file has not been written to in > 5 minutes | Linux + macOS |
+| 11 | [Suspicious IP Detector](./11-suspicious-ip-detector/) | Finds IPs with > 5 failed login attempts in auth logs | All platforms |
 
 ## How to Use
 
 Each folder is self-contained. Navigate into a folder and run the script:
 
 ```bash
-cd 09-tcp-port-checker
-python3 tcp_port_checker.py google.com 443
-
-cd 10-stale-log-checker
-python3 stale_log_checker.py /var/log/myapp/app.log
+cd 11-suspicious-ip-detector
+python3 suspicious_ip_detector.py /var/log/auth.log
 ```
 
 ## Goal
 
 - Build a hands-on library of **40 SRE-level Python scripts**
-- Cover topics like: system monitoring, log parsing, alerting, process management, networking, Kubernetes checks, CI/CD helpers, and more
+- Cover topics like: system monitoring, log parsing, alerting, process management, networking, security, Kubernetes checks, CI/CD helpers, and more
 - Serve as an **interview preparation reference** with real, deep explanations
 
 ## Topics Covered (Planned)
@@ -43,6 +41,7 @@ python3 stale_log_checker.py /var/log/myapp/app.log
 - Log file analysis and alerting
 - HTTP health checks and endpoint monitoring
 - TCP/UDP port and connectivity checks
+- Security: brute-force detection, auth log analysis
 - DNS lookups
 - Alert thresholds and notifications
 - Kubernetes and container basics
