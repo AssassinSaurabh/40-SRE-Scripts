@@ -18,14 +18,15 @@
 | 09 | [TCP Port Checker](./09-tcp-port-checker/) | Tests if a TCP port is OPEN or CLOSED using raw sockets | All platforms |
 | 10 | [Stale Log Checker](./10-stale-log-checker/) | Warns if a log file has not been written to in > 5 minutes | Linux + macOS |
 | 11 | [Suspicious IP Detector](./11-suspicious-ip-detector/) | Finds IPs with > 5 failed login attempts in auth logs | All platforms |
+| 12 | [HTTP Status Counter](./12-http-status-counter/) | Counts requests per HTTP status code from access logs | All platforms |
 
 ## How to Use
 
 Each folder is self-contained. Navigate into a folder and run the script:
 
 ```bash
-cd 11-suspicious-ip-detector
-python3 suspicious_ip_detector.py /var/log/auth.log
+cd 12-http-status-counter
+python3 http_status_counter.py /var/log/nginx/access.log
 ```
 
 ## Goal
@@ -42,6 +43,7 @@ python3 suspicious_ip_detector.py /var/log/auth.log
 - HTTP health checks and endpoint monitoring
 - TCP/UDP port and connectivity checks
 - Security: brute-force detection, auth log analysis
+- HTTP access log analysis
 - DNS lookups
 - Alert thresholds and notifications
 - Kubernetes and container basics
