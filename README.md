@@ -19,20 +19,23 @@
 | 10 | [Stale Log Checker](./10-stale-log-checker/) | Warns if a log file has not been written to in > 5 minutes | Linux + macOS |
 | 11 | [Suspicious IP Detector](./11-suspicious-ip-detector/) | Finds IPs with > 5 failed login attempts in auth logs | All platforms |
 | 12 | [HTTP Status Counter](./12-http-status-counter/) | Counts requests per HTTP status code from access logs | All platforms |
+| 13 | [MariaDB Connection Check](./13-mariadb-connection-check/) | Verifies MariaDB is up by reading the MySQL protocol greeting packet | All platforms |
 
 ## How to Use
 
 Each folder is self-contained. Navigate into a folder and run the script:
 
 ```bash
-cd 12-http-status-counter
-python3 http_status_counter.py /var/log/nginx/access.log
+cd 13-mariadb-connection-check
+python3 mariadb_connection_check.py
+# or with a remote host:
+python3 mariadb_connection_check.py db.prod.internal 3306
 ```
 
 ## Goal
 
 - Build a hands-on library of **40 SRE-level Python scripts**
-- Cover topics like: system monitoring, log parsing, alerting, process management, networking, security, Kubernetes checks, CI/CD helpers, and more
+- Cover topics like: system monitoring, log parsing, alerting, process management, networking, security, database checks, Kubernetes, CI/CD helpers, and more
 - Serve as an **interview preparation reference** with real, deep explanations
 
 ## Topics Covered (Planned)
@@ -44,6 +47,7 @@ python3 http_status_counter.py /var/log/nginx/access.log
 - TCP/UDP port and connectivity checks
 - Security: brute-force detection, auth log analysis
 - HTTP access log analysis
+- Database connectivity checks (MariaDB, PostgreSQL, Redis...)
 - DNS lookups
 - Alert thresholds and notifications
 - Kubernetes and container basics
