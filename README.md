@@ -20,16 +20,17 @@
 | 11 | [Suspicious IP Detector](./11-suspicious-ip-detector/) | Finds IPs with > 5 failed login attempts in auth logs | All platforms |
 | 12 | [HTTP Status Counter](./12-http-status-counter/) | Counts requests per HTTP status code from access logs | All platforms |
 | 13 | [MariaDB Connection Check](./13-mariadb-connection-check/) | Verifies MariaDB is up by reading the MySQL protocol greeting packet | All platforms |
+| 14 | [Redis Connection Check](./14-redis-connection-check/) | Sends RESP PING and verifies PONG; reports latency in ms | All platforms |
 
 ## How to Use
 
 Each folder is self-contained. Navigate into a folder and run the script:
 
 ```bash
-cd 13-mariadb-connection-check
-python3 mariadb_connection_check.py
+cd 14-redis-connection-check
+python3 redis_connection_check.py
 # or with a remote host:
-python3 mariadb_connection_check.py db.prod.internal 3306
+python3 redis_connection_check.py redis.prod.internal 6379
 ```
 
 ## Goal
@@ -47,7 +48,7 @@ python3 mariadb_connection_check.py db.prod.internal 3306
 - TCP/UDP port and connectivity checks
 - Security: brute-force detection, auth log analysis
 - HTTP access log analysis
-- Database connectivity checks (MariaDB, PostgreSQL, Redis...)
+- Database connectivity checks (MariaDB, Redis, PostgreSQL...)
 - DNS lookups
 - Alert thresholds and notifications
 - Kubernetes and container basics
