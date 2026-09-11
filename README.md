@@ -21,16 +21,15 @@
 | 12 | [HTTP Status Counter](./12-http-status-counter/) | Counts requests per HTTP status code from access logs | All platforms |
 | 13 | [MariaDB Connection Check](./13-mariadb-connection-check/) | Verifies MariaDB is up by reading the MySQL protocol greeting packet | All platforms |
 | 14 | [Redis Connection Check](./14-redis-connection-check/) | Sends RESP PING and verifies PONG; reports latency in ms | All platforms |
+| 15 | [Port Process Finder](./15-port-process-finder/) | Identifies which process is listening on a given TCP port via `ss` | Linux |
 
 ## How to Use
 
 Each folder is self-contained. Navigate into a folder and run the script:
 
 ```bash
-cd 14-redis-connection-check
-python3 redis_connection_check.py
-# or with a remote host:
-python3 redis_connection_check.py redis.prod.internal 6379
+cd 15-port-process-finder
+python3 port_process_finder.py 8080
 ```
 
 ## Goal
@@ -42,7 +41,7 @@ python3 redis_connection_check.py redis.prod.internal 6379
 ## Topics Covered (Planned)
 
 - System resource monitoring (CPU, Memory, Disk, Network)
-- Process management
+- Process management and port conflict resolution
 - Log file analysis and alerting
 - HTTP health checks and endpoint monitoring
 - TCP/UDP port and connectivity checks
