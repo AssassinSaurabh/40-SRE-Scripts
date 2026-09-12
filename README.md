@@ -22,20 +22,21 @@
 | 13 | [MariaDB Connection Check](./13-mariadb-connection-check/) | Verifies MariaDB is up by reading the MySQL protocol greeting packet | All platforms |
 | 14 | [Redis Connection Check](./14-redis-connection-check/) | Sends RESP PING and verifies PONG; reports latency in ms | All platforms |
 | 15 | [Port Process Finder](./15-port-process-finder/) | Identifies which process is listening on a given TCP port via `ss` | Linux |
+| 16 | [Config File Diff](./16-config-file-diff/) | Compares two config files and reports missing/different lines | All platforms |
 
 ## How to Use
 
 Each folder is self-contained. Navigate into a folder and run the script:
 
 ```bash
-cd 15-port-process-finder
-python3 port_process_finder.py 8080
+cd 16-config-file-diff
+python3 config_diff.py server1.conf server2.conf
 ```
 
 ## Goal
 
 - Build a hands-on library of **40 SRE-level Python scripts**
-- Cover topics like: system monitoring, log parsing, alerting, process management, networking, security, database checks, Kubernetes, CI/CD helpers, and more
+- Cover topics like: system monitoring, log parsing, alerting, process management, networking, security, database checks, config management, Kubernetes, CI/CD helpers, and more
 - Serve as an **interview preparation reference** with real, deep explanations
 
 ## Topics Covered (Planned)
@@ -48,6 +49,7 @@ python3 port_process_finder.py 8080
 - Security: brute-force detection, auth log analysis
 - HTTP access log analysis
 - Database connectivity checks (MariaDB, Redis, PostgreSQL...)
+- Configuration management and drift detection
 - DNS lookups
 - Alert thresholds and notifications
 - Kubernetes and container basics
