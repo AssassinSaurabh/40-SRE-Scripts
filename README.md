@@ -27,6 +27,7 @@
 | 16 | [config-file-diff](./16-config-file-diff/) | Compares two config files; reports missing/changed lines | `difflib.unified_diff()` | All platforms |
 | 17 | [http-retry-health-check](./17-http-retry-health-check/) | Health check with 3 retries and exponential backoff | Retry loop, `2^attempt` backoff | All platforms |
 | 18 | [load-average-check](./18-load-average-check/) | Warns if 1-min load average exceeds CPU core count | `/proc/loadavg`, `os.cpu_count()`, trend | Linux |
+| 19 | [zombie-process-scanner](./19-zombie-process-scanner/) | Scans all processes and reports zombie (`Z` state) processes | `/proc/<pid>/stat`, `rfind` parse, race condition | Linux |
 
 ---
 
@@ -39,6 +40,9 @@ cd 40-SRE-Scripts
 # System health
 python3 01-disk-usage-check/disk_usage_check.py
 python3 18-load-average-check/load_average_check.py
+
+# Process management
+python3 19-zombie-process-scanner/zombie_process_scanner.py
 
 # Network & ports
 python3 09-tcp-port-checker/tcp_port_checker.py google.com 443
@@ -79,7 +83,7 @@ Every script folder has a `README.md` with these sections:
 | Category | Scripts |
 |----------|---------|
 | **System Monitoring** | 01 Disk, 02 Memory, 03 CPU, 04 Top Processes, 18 Load Average |
-| **Process & Service Management** | 05 Systemd, 15 Port Finder |
+| **Process & Service Management** | 05 Systemd, 15 Port Finder, 19 Zombie Scanner |
 | **Log Analysis** | 06 Error Counter, 10 Stale Log, 11 Suspicious IPs, 12 HTTP Status |
 | **Network & Connectivity** | 07 HTTP Check, 09 TCP Port, 17 Retry Health Check |
 | **Database Checks** | 13 MariaDB, 14 Redis |
