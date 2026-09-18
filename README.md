@@ -28,6 +28,7 @@
 | 17 | [http-retry-health-check](./17-http-retry-health-check/) | Health check with 3 retries and exponential backoff | Retry loop, `2^attempt` backoff | All platforms |
 | 18 | [load-average-check](./18-load-average-check/) | Warns if 1-min load average exceeds CPU core count | `/proc/loadavg`, `os.cpu_count()`, trend | Linux |
 | 19 | [zombie-process-scanner](./19-zombie-process-scanner/) | Scans all processes and reports zombie (`Z` state) processes | `/proc/<pid>/stat`, `rfind` parse, race condition | Linux |
+| 20 | [memory-leak-detector](./20-memory-leak-detector/) | Detects continuous memory increase across last 3 log readings | `split()[-1]`, `values[-3:]`, chained comparison | All platforms |
 
 ---
 
